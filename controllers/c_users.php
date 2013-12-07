@@ -81,7 +81,8 @@ class users_controller extends base_controller {
             Router::redirect("/users/login/");
 
         # But if we did, login succeeded! 
-        } else {
+        } 
+        else {
 
             /* 
             Store this token in a cookie using setcookie()
@@ -97,9 +98,9 @@ class users_controller extends base_controller {
             # Send them to the main page - or whever you want them to go
             Router::redirect("/");
 
-    }
+        }
 
-}
+    }
 
     public function logout() {
         //echo "This is the logout page";
