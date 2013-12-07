@@ -126,22 +126,24 @@ class users_controller extends base_controller {
 
     public function profile($user_name = NULL) {
 
-
-        if($user_name == NULL) {
-            echo "No user specified";
+        if(!$this->user) {
+        Router::redirect('/users/login');
         }
-        else {
-            echo "This is the profile for ".$user_name;
-        }
-        # Create a new View instance
-        # Do *not* include .php with the view name
-        $view = View::instance('v_users_profile');
+        // if($user_name == NULL) {
+        //     echo "No user specified";
+        // }
+        // else {
+        //     echo "This is the profile for ".$user_name;
+        // }
+        // # Create a new View instance
+        // # Do *not* include .php with the view name
+        // $view = View::instance('v_users_profile');
 
-        # Pass information to the view instance
-        $view->user_name = $user_name;
+        // # Pass information to the view instance
+        // $view->user_name = $user_name;
 
-        # Render View
-        echo $view;
+        // # Render View
+        // echo $view;
         /*
         If you look at _v_template you'll see it prints a $content variable in the <body>
         Knowing that, let's pass our v_users_profile.php view fragment to $content so 
@@ -150,10 +152,10 @@ class users_controller extends base_controller {
         $this->template->content = View::instance('v_users_profile');
 
         # $title is another variable used in _v_template to set the <title> of the page
-        $this->template->title = "Profile";
+        $this->template->title = "Profile of".$this->user->first_name;
 
         # Pass information to the view fragment
-        $this->template->content->user_name = $user_name;
+        //$this->template->content->user_name = $user_name;
 
         # Render View
         echo $this-template;
