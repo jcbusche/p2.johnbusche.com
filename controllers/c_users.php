@@ -126,9 +126,9 @@ class users_controller extends base_controller {
 
     public function profile($user_name = NULL) {
 
-        if(!$this->user) {
-        Router::redirect('/users/login');
-        }
+        // if(!$this->user) {
+        // Router::redirect('/users/login');
+        // }
         // if($user_name == NULL) {
         //     echo "No user specified";
         // }
@@ -149,7 +149,7 @@ class users_controller extends base_controller {
         Knowing that, let's pass our v_users_profile.php view fragment to $content so 
         it's printed in the <body>
         */
-        else{
+        //else{
         $this->template->content = View::instance('v_users_profile');
 
         # $title is another variable used in _v_template to set the <title> of the page
@@ -160,7 +160,7 @@ class users_controller extends base_controller {
 
         # Render View
         echo $this-template;
-        }
+       // }
 
     }
 
