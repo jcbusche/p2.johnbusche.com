@@ -181,8 +181,8 @@ class users_controller extends base_controller {
                 users.last_name
             FROM posts
             INNER JOIN users
-                ON posts.user_id = users.user_id';
-            
+                ON posts.user_id = users.user_id
+            WHERE posts.user_id = '.$this->user->user_id;
 
         # Run the query, store the results in the variable $posts
         $posts = DB::instance(DB_NAME)->select_rows($q);
