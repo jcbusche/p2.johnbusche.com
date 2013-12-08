@@ -1,10 +1,9 @@
 <?php if($user): ?>
     <h1>Welcome to your profile, <?=$user->first_name?>.  Here you can view, edit, and delete your posts.</h1>
 
-    <?php
-    	$posts_reverse = array_reverse($posts) 
-    	foreach($posts_reverse as $post): 
-	?>
+    <?php $posts_reverse = array_reverse($posts); ?>
+    <?php foreach($posts_reverse as $post):?> 
+	
 
 	<article>
 
