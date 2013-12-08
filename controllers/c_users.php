@@ -173,6 +173,27 @@ class users_controller extends base_controller {
         # $title is another variable used in _v_template to set the <title> of the page
         $this->template->title = "Profile of".$this->user->first_name;
 
+        # Build the query
+        $q = 'SELECT 
+                posts.content,
+                posts.created,
+                posts.user_id AS post_user_id,
+                users_users.user_id AS follower_id,
+                users.first_name,
+                users.last_name
+            FROM posts
+            INNER JOIN users_users 
+                ON posts.user_id = users_users.user_id_followed
+            INNER JOIN users 
+                ON posts.user_id = users.user_id
+            WHERE users_users.user_id = '.$this->user->user_id;
+
+        # Run the query, store the results in the variable $posts
+        $posts = DB::instance(DB_NAME)->select_rows($q);
+
+        # Pass data to the View
+        $this->template->content->posts = $posts;
+
         # Pass information to the view fragment
         //$this->template->content->user_name = $user_name;
 
