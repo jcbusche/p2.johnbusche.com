@@ -28,6 +28,9 @@ class users_controller extends base_controller {
         // print_r($_POST);
         // echo '</pre>';
 
+        
+
+
         # More data we want stored with the user
         $_POST['created']  = Time::now();
         $_POST['modified'] = Time::now(); 
@@ -43,17 +46,30 @@ class users_controller extends base_controller {
 
          # For now, just confirm they've signed up - 
         # You should eventually make a proper View for this
-        Router::redirect("/users/login/");
-        echo 'You\'re signed up'; 
+
+        #SQL query for user email
+        $q = "SELECT * FROM users WHERE email = '".$_POST['email']."'";
+        $user_exists = DB::instance(DB_NAME)->select_rows($q);
+        if(!empty($user_exists)){
+            #Successful creation
+            Router::redirect("/users/login/");
+            echo 'You\'re signed up'; 
+        }
+        else {
+            Router::redirect("/users/login/user-exists");
+        }
 
     }
 
 
     public function login() {
-        #echo "This is the login page";
+        //echo "This is the login page";
         # Setup view
             $this->template->content = View::instance('v_users_login');
             $this->template->title   = "Login";
+
+            #error
+            $this->template->content->error = $error;
 
         # Render template
             echo $this->template;

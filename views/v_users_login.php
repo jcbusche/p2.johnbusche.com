@@ -12,4 +12,10 @@
 
     <input type='submit' value='Log in'>
 
+    <?php if($error && $error == 'user-exists'): ?>
+		This user already exists. Please login.
+	<?php else: ?>
+		Incorrect user information.
+<?php endif; ?>
+
 </form>
