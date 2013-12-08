@@ -31,35 +31,33 @@ class users_controller extends base_controller {
         #Sanitize
         $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 
+        #SQL query for user email
         $q = "SELECT * FROM users WHERE email = '".$_POST['email']."'";
         $user_exists = DB::instance(DB_NAME)->select_rows($q);
-        if(!empty($user_exists)){
-            #Redirect dup email to login page and pass error
-            Router::redirect("/users/login/user-exists");
-        }
 
 
-        # More data we want stored with the user
-        $_POST['created']  = Time::now();
-        $_POST['modified'] = Time::now(); 
+            if(!empty($user_exists)){
+                #Redirect dup email to login page and pass error
+                Router::redirect("/users/login/user-exists");
+            }
+            else{
 
-        # Encrypt the password  
-        $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
+                # More data we want stored with the user
+                $_POST['created']  = Time::now();
+                $_POST['modified'] = Time::now(); 
 
-        # Create an encrypted token via their email address and a random string
-        $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string()); 
+                # Encrypt the password  
+                $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
 
-        # Insert this user into the database
-        $user_id = DB::instance(DB_NAME)->insert('users', $_POST);   
+                # Create an encrypted token via their email address and a random string
+                $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string()); 
 
-        # For now, just confirm they've signed up - 
-        # You should eventually make a proper View for this
-
-        #SQL query for user email
-        
-        #Successful creation
-        Router::redirect("/users/login/");
-        //echo 'You\'re signed up';
+                # Insert this user into the database
+                $user_id = DB::instance(DB_NAME)->insert('users', $_POST);  
+            }
+            
+                #Successful creation
+                Router::redirect("/users/login/");
 
     }
 
