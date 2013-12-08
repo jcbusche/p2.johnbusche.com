@@ -176,7 +176,9 @@ class users_controller extends base_controller {
         #Display all of this user's posts
         # Build the query
         $q = 'SELECT
-            FROM posts';
+            FROM posts
+            INNER JOIN users
+                ON posts.user_id = users.user_id';
             
 
         # Run the query, store the results in the variable $posts
