@@ -55,11 +55,21 @@ class users_controller extends base_controller {
                 $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string()); 
 
                 # Insert this user into the database
-                $user_id = DB::instance(DB_NAME)->insert('users', $_POST);  
-            }
+                $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
+
+                $to = $_POST['email'];
+                $subject = "Welcome to Overheard";
+                $message = "Congratulations, you've signed up for Overheard. You should have been sent to the login page after your registration, but in case you missed it, you can login at p2.johnbusche.com/users/login";
+                $from = 'john@johnbusche.com';
+                $headers = "From:" . $from;        
+            
+                if(!$this->user){
+                    mail($to, $subject, $message, $headers);
+                }
 
                 #Successful creation
                 Router::redirect("/users/login/");
+            }
 
     }
 
