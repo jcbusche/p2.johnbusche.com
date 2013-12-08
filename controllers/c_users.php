@@ -28,7 +28,15 @@ class users_controller extends base_controller {
         // print_r($_POST);
         // echo '</pre>';
 
-        
+        #Sanitize
+        $_POST = DB::instance(DB_NAME)->sanitize($_POST);
+
+        $q = "SELECT * FROM users WHERE email = '".$_POST['email']."'";
+        $user_exists = DB::instance(DB_NAME)->select_rows($q);
+        if(!empty($user_exists)){
+            #Redirect dup email to login page and pass error
+            Router::redirect("/users/login/user-exists");
+        }
 
 
         # More data we want stored with the user
@@ -48,17 +56,10 @@ class users_controller extends base_controller {
         # You should eventually make a proper View for this
 
         #SQL query for user email
-        $q = "SELECT * FROM users WHERE email = '".$_POST['email']."'";
-        $user_exists = DB::instance(DB_NAME)->select_rows($q);
-        if(!empty($user_exists)){
-            #Redirect dup email to login page and pass error
-            Router::redirect("/users/login/user-exists");
-        }
-        else {
-            #Successful creation
-            Router::redirect("/users/login/");
-            echo 'You\'re signed up'; 
-        }
+        
+        #Successful creation
+        Router::redirect("/users/login/");
+        //echo 'You\'re signed up';
 
     }
 
