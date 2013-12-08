@@ -21,6 +21,8 @@
 
             <a href='/users/logout'>Logout</a>
             <a href='/users/profile'>Profile</a>
+            <a href='/posts'>Your Feed</a>
+            <a href='/posts/users'>Manage Subscriptions</a>
 
         <!-- Menu options for users who are not logged in -->
         <?php else: ?>
