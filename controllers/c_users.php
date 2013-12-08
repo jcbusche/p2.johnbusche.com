@@ -51,12 +51,13 @@ class users_controller extends base_controller {
         $q = "SELECT * FROM users WHERE email = '".$_POST['email']."'";
         $user_exists = DB::instance(DB_NAME)->select_rows($q);
         if(!empty($user_exists)){
+            #Redirect dup email to login page and pass error
+            Router::redirect("/users/login/user-exists");
+        }
+        else {
             #Successful creation
             Router::redirect("/users/login/");
             echo 'You\'re signed up'; 
-        }
-        else {
-            Router::redirect("/users/login/user-exists");
         }
 
     }

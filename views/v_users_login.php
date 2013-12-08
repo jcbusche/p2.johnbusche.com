@@ -14,8 +14,8 @@
 
     <?php if($error && $error == 'user-exists'): ?>
 		This user already exists. Please login.
-	<?php elseif($error): ?>
-		Incorrect user information.
+	<?php elseif(isset($error) && $error == 'invalid-login'): ?>
+		Login failed.  Please try again.
 	<?php endif; ?>
 
 </form>
