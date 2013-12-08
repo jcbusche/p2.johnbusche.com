@@ -5,17 +5,22 @@
     <?php foreach($posts_reverse as $post):?> 
 	
 
-	<article>
+		<article>
 
-	    <h2><?=$post['first_name']?> <?=$post['last_name']?> posted:</h2>
+		    <h2><?=$post['first_name']?> <?=$post['last_name']?> posted:</h2>
 
-	    <p><?=$post['content']?></p>
+		    <p><?=$post['content']?></p>
 
-	    <time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
-	        <?=Time::display($post['created'])?>
-	    </time>
+		    <time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
+		        <?=Time::display($post['created'])?>
+		    </time>
 
-	</article>
+		</article>
+
+		</form action="/posts/p_delete<$posts.post_id?>" medthod="post">
+			<input type = "submit" name = "Delete" value = "X"/>
+		</form>
+		
 
 	<?php endforeach; ?>
 <?php else: ?>

@@ -70,6 +70,23 @@ class posts_controller extends base_controller {
         Router::redirect("/users/profile");
 
     }
+
+    public function p_delete($post_id){
+
+        #Delete post
+        $to_delete = 'WHERE post_id = ' .$post_id;
+        DB::instance(DB_NAME)->delete('posts', $to_delete);
+
+        #Send user back to his/her profile
+        Router::redirect("/users/profile");
+
+    }
+
+    public function p_edit($post_id){
+
+        
+    }
+
     public function users() {
 
         # Set up the View
