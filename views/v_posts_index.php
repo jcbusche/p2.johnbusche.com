@@ -1,4 +1,5 @@
-<?php foreach($posts as $post): ?>
+<?php $posts_reverse = array_reverse($posts); ?>
+<?php foreach($posts_reverse as $post):?> 
 
 <article>
 
