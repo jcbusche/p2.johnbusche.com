@@ -15,6 +15,8 @@
 
 		    <input type='submit' value='Log in'>
 
+		    <br><br>
+
 		    <?php if($error && $error == 'user-exists'): ?>
 				This user already exists. Please login.
 			<?php elseif(isset($error) && $error == 'invalid-login'): ?>

@@ -33,9 +33,11 @@ class users_controller extends base_controller {
 
         #SQL query for user email
         $q = "SELECT * FROM users WHERE email = '".$_POST['email']."'";
+
+        #Execute query
         $user_exists = DB::instance(DB_NAME)->select_rows($q);
 
-
+            #Check for duplicate email
             if(!empty($user_exists)){
                 #Redirect dup email to login page and pass error
                 Router::redirect("/users/login/user-exists");
@@ -55,14 +57,14 @@ class users_controller extends base_controller {
                 # Insert this user into the database
                 $user_id = DB::instance(DB_NAME)->insert('users', $_POST);  
             }
-            
+
                 #Successful creation
                 Router::redirect("/users/login/");
 
     }
 
 
-    public function login() {
+    public function login($error = NULL) {
         //echo "This is the login page";
         # Setup view
             $this->template->content = View::instance('v_users_login');
@@ -111,7 +113,7 @@ class users_controller extends base_controller {
             param 3 = when to expire
             param 4 = the path of the cooke (a single forward slash sets it for the entire domain)
             */
-            setcookie("token", $token, strtotime('+1 year'), '/');
+            setcookie("token", $token, strtotime('+1 week'), '/');
 
             # Send them to the main page - or whever you want them to go
             Router::redirect("/");
