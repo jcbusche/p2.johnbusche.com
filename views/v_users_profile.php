@@ -14,10 +14,12 @@
 		    <time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
 		        <?=Time::display($post['created'])?>
 		    </time>
-		    <a href='/posts/p_delete/<?=$post['post_id']?>'>Delete</a>
+		    <form action="/posts/p_delete/<?=$post['post_id']?>" method="post">
+				<input type="submit" name="delete" value="Delete"/>
+			</form>
 
 		</article>
-		
+
 	<?php endforeach; ?>
 <?php else: ?>
     <h1>No user specified</h1>
