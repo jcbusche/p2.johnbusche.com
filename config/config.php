@@ -28,7 +28,7 @@ A email designated to receive messages from the server. Examples:
  	
  	Some might want this to be the same as the APP_EMAIL, others might want to create a designated gmail address for it
 */ 	
-	define('SYSTEM_EMAIL', 'john.busche@gmail.com'); 
+	define('SYSTEM_EMAIL', 'jcbusche@gmail.com'); 
 
 	#Set the app's name
 	define('APP_NAME', 'Overheard')
