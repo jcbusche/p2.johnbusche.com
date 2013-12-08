@@ -77,7 +77,7 @@ class users_controller extends base_controller {
             echo $this->template;
     }
 
-    public function p_login() {
+    public function p_login($error = NULL) {
 
         # Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
         $_POST = DB::instance(DB_NAME)->sanitize($_POST);
