@@ -22,6 +22,7 @@
             
             <a href='/users/profile'>Profile</a>
             <a href='/posts'>Your Feed</a>
+            <a href='/posts/add'>New post</a>
             <a href='/posts/users'>Manage Subscriptions</a>
             <a href='/users/logout'>Logout</a>
 
