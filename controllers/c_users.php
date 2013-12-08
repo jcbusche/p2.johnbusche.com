@@ -52,7 +52,7 @@ class users_controller extends base_controller {
         # Insert this user into the database
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);   
 
-         # For now, just confirm they've signed up - 
+        # For now, just confirm they've signed up - 
         # You should eventually make a proper View for this
 
         #SQL query for user email
@@ -98,7 +98,7 @@ class users_controller extends base_controller {
         if(!$token) {
 
             # Send them back to the login page
-            Router::redirect("/users/login/");
+            Router::redirect("/users/login/invalid-login");
 
         # But if we did, login succeeded! 
         } 
