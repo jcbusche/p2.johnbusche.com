@@ -2,11 +2,11 @@
 	<div class='error' align "center">
 
 		Post is empty.
-		<br>
+		<br><br>
 	</div>
-<?php endif;?>
+<?php endif; ?>
 
-<?php else:?>
+<?php else: ?>
 
 <form method='POST' action='/posts/p_add'>
 
@@ -22,4 +22,4 @@
 	</div>
 </form> 
 
-<?php endif;?>
+<?php endif; ?>
