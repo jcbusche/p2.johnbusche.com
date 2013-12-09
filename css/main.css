@@ -41,7 +41,12 @@
     float: left;
     display: block;
     position:relative;
+    border-right: #4C4C4C solid 1px;
    
+}
+
+#menu ul li:last-child {
+    border-right: none;
 }
 
 /* CONTENTS */
