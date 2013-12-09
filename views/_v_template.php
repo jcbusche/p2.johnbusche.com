@@ -59,17 +59,16 @@
     </div>
 
     <br>
-    <div class = "main_body">
-        <div id = "main_content">
+    
 
 
 	       <?php if(isset($content)) echo $content; ?>
 
 
-        </div>
+        
 
         <?php if(isset($client_files_body)) echo $client_files_body; ?>
         
-    </div>
+    
 </body>
 </html>
