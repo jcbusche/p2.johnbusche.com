@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/main.css" type="text/css">-->
 					
 	<!-- Controller Specific JS/CSS -->
-	<?php if(isset($client_files_head)) echo $client_files_head; ?>
+	<!--<?php if(isset($client_files_head)) echo $client_files_head; ?>-->
 	
 </head>
 
