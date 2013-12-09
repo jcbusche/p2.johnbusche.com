@@ -10,7 +10,7 @@
 
 <form method='POST' action='/posts/p_add'>
 
-<?php endif;?>
+
 
 	<div>
 
@@ -21,3 +21,5 @@
     <input type='submit' value='Publish'>
 	</div>
 </form> 
+
+<?php endif;?>
