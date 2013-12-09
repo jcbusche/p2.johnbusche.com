@@ -43,7 +43,7 @@
     float: left;
     display: block;
     position:relative;
-    right: 50%;
+   
 }
 
 /* CONTENTS */
@@ -71,7 +71,7 @@ article {
 }
 
 a {
-    color: darkgray;
+    color: #999999;
 }
 
 
@@ -122,20 +122,14 @@ h4 {
     background-color: #999999;
 }
 
-blockquote {
-    border-left-color: black;
-}
 
-blockquote.other_user {
-    border-left-color: #999999;
-}
 
 .delete_post a:hover {
     background-color: red;
 }
 
 .edit_post a:hover {
-    background-color: #F7F74A;
+    background-color: #999999;
 }
 
 #menu ul li:hover {
