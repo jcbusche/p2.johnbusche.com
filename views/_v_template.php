@@ -17,7 +17,7 @@
 	<div id='menu'>
 
 
-        <a href='/'><span id = "logo"><?php echo strtoupper(APP_NAME);?></a>
+        <a href='/'><span id = "logo"><?php echo strtoupper(APP_NAME);?></span></a>
         <br>
 
         <!-- Menu for users who are logged in -->
