@@ -1,18 +1,143 @@
 #logo {
-	font-size: 2.5em;
-	color: ;
+    font-size: 3em;
+    color: #4C4C4C;
+    /*font-family: 'Lily Script One', cursive;*/
+    font-family: sans-serif;
+    margin: 0em;
+    margin-top: 0em;
+    text-align: left;
+    /*text-decoration:underline;*/
 }
 
-#menu{
+#menu {
+    background-color: #EBEBEB;
+    margin: 0 auto;
+    left: 10%;
+    padding: 1em;
+    text-align: left;
+    overflow: hidden;
+}
+
+#menu a {
+    margin: .3em;
+    text-decoration: none;
+  	font-family: sans-serif;
+    color: #4C4C4C;
+    /*font-family: Impact, Charcoal, sans-serif;*/
 
 }
 
 #menu ul {
-	margin: 0 auto;
-	padding: 0;
-	text-align: center;
-	left: %30;
-	float: left;
-	display: block;
+    margin: 0 auto;
+    padding: 1em;
+    left:3em;
+    text-align: left;
+    position: relative;
+    float: left;
+    display: block;
+
 }
 
+#menu ul li {
+    list-style: none;
+    float: left;
+    display: block;
+    position:relative;
+    right: 50%;
+}
+
+/* CONTENTS */
+
+body {
+    /*max-width: 600px;*/
+    /*border: 1px solid black;*/
+    margin: 0 auto;
+    margin-right: 4em;
+    margin-left: 50px;
+    margin-top: 20px;
+
+
+}
+
+.main_body {
+    background: #999999;
+}
+
+article {
+    border-bottom-color: #999999;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    background-color: #999999;
+}
+
+a {
+    color: darkgray;
+}
+
+
+#main_content {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #999999;
+    /*margin: 20px 0 20px 0;*/
+    padding: 10px;
+}
+
+h3 {
+
+    font-family: Impact, Charcoal, sans-serif;
+    color: #999999;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h4 {
+    color: #999999;
+}
+/* FOOTER */
+
+#footer {
+    background-color: #F7F74A;
+    border-top: 1px black solid;
+    color: black;
+    border-radius: 0 0 5px 5px;
+}
+
+
+/* SPECIAL ALERTS AND EFFECTS */
+
+.error {
+    color: red;
+}
+.welcome {
+    color: green;
+}
+.faded {
+    color: #999999;
+}
+
+#users {
+    border-bottom: 1px solid #999999;
+    background-color: #999999;
+}
+
+blockquote {
+    border-left-color: black;
+}
+
+blockquote.other_user {
+    border-left-color: #999999;
+}
+
+.delete_post a:hover {
+    background-color: red;
+}
+
+.edit_post a:hover {
+    background-color: #F7F74A;
+}
+
+#menu ul li:hover {
+    color: red;
+}
