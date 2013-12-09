@@ -4,7 +4,6 @@
 		Post is empty.
 		<br><br>
 	</div>
-<?php endif; ?>
 
 <?php else: ?>
 
