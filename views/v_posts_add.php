@@ -12,10 +12,12 @@
 
 <?php endif;?>
 
+	<div>
+
     <label for='content'>New Post:</label><br>
     <textarea name='content' id='content'></textarea>
 
     <br><br>
     <input type='submit' value='Publish'>
-
+	</div>
 </form> 

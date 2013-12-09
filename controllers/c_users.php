@@ -58,8 +58,8 @@ class users_controller extends base_controller {
                 $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
 
                 $to = $_POST['email'];
-                $subject = "Welcome to Overheard";
-                $message = "Congratulations, you've signed up for Overheard. You should have been sent to the login page after your registration, but in case you missed it, you can login at p2.johnbusche.com/users/login";
+                $subject = "Welcome to "APP_NAME;
+                $message = "Congratulations, you've signed up "APP_NAME". You should have been sent to the login page after your registration, but in case you missed it, you can login at p2.johnbusche.com/users/login";
                 $from = 'john@johnbusche.com';
                 $headers = "From:" . $from;        
             
