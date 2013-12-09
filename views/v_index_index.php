@@ -11,3 +11,17 @@
 </p> -->
 
 <h1>Welcome to <?=APP_NAME?><?php if($user) echo ', '.$user->first_name; ?></h1>
+<div>
+<?=APP_NAME?> is a simple microblog that allows you to create posts and follow others.
+<br><br>
++1 Features include:
+<ul>
+	<li>
+		Deleting posts
+	</li>
+
+	<li>
+		Email notification of registration
+	</li>
+</ul>
+</div>
